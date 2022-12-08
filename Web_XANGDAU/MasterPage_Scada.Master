@@ -1,0 +1,161 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage_Scada.master.cs" Inherits="Web_XANGDAU.MasterPage_Scada" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TRẠM XĂNG DẦU</title>
+
+    <!-- BOOSTRAP 4 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- DataTable -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.12.1/b-2.2.3/b-colvis-2.2.3/b-html5-2.2.3/b-print-2.2.3/datatables.min.css"/>
+ 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.12.1/b-2.2.3/b-colvis-2.2.3/b-html5-2.2.3/b-print-2.2.3/datatables.min.js"></script>
+
+      <!-- ICON -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />    
+
+    <!-- MyCSS -->
+    <link href="css/Master_Scada.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="frm_Master_Scada" runat="server">
+         <!------------------------ SIDEBAR --------------------------->
+    <section class="sidebar hide">
+        <div class="brand">
+            <i class="bi bi-trophy-fill"></i>
+            <span class="text">LINK</span>
+        </div>
+        <ul class="side_menu top">
+            <li id="Home">
+                <a href="GD_Home.aspx" data-toggle="tooltip" data-placement="right" title="Trang chủ">
+                    <i class="bi bi-house-fill"></i>
+                    <span class="text">Trang chủ</span>
+                </a>
+            </li>
+            <li id="Scada">
+                <a href="GD_Online_Scada.aspx" data-toggle="tooltip" data-placement="right" title="Online SCADA">
+                    <i class="bi bi-pc-display"></i>
+                    <span class="text">Online SCADA</span>
+                </a>
+            </li>
+            <li id="DuLieuTram" class="DataTram">
+                <a href="GD_Data.aspx" data-toggle="tooltip" data-placement="right" title="Dữ liêu trạm">
+                    <i class="bi bi-clipboard2-data"></i>
+                    <span class="text">Dữ liệu trạm</span>
+                </a>
+            </li>
+            <li id="LichSuHD">
+                <a href="GD_LichSuHD.aspx" data-toggle="tooltip" data-placement="right" title="Lịch sử hoạt động">
+                    <i class="bi bi-clock-history"></i>
+                    <span class="text">Lịch sử hoạt động</span>
+                </a>
+            </li>
+            <li id="QuanLyNguoiDung">
+                <a href="GD_QuanLyNguoiDung.aspx" data-toggle="tooltip" data-placement="right" title="Quản lý người dùng với quyền Admin">
+                    <i class="bi bi-people-fill"></i>
+                    <span class="text">Quản lý người dùng</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="side_menu">
+            <li>
+                <a href="DN_Login.aspx" class="logout" data-toggle="tooltip" data-placement="right" title="Đăng xuất">
+                    <i class="bi bi-box-arrow-in-left"></i>
+                    <span class="text">Đăng xuất</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <!------------------------ END OF SIDEBAR --------------------------->
+    <!------------------------ CONTENT --------------------------->
+    <section class="content">
+        <!------------------------ NAVBAR --------------------------->
+        <nav>
+            <i class="bi bi-list" id="menu"></i>
+            <div class="title">TRẠM XĂNG DẦU</div>
+            <div class="profile" style="position: absolute;
+                                        right: 10px;
+                                        align-items: center;
+                                        display: flex;">
+                <div class="profile__content" style="display: flex;flex-direction: column;">
+                    <asp:Label ID="lbl_Quyen" runat="server" Text="" class="name" style="display: inline;
+                                                                                    font-size: 15px;
+                                                                                    margin: 0;
+                                                                                    text-align: right;"></asp:Label>
+                    <asp:Label ID="lbl_HoTen" runat="server" Text="" class="name" style="display: inline;
+                                                                                    font-size: 15px;
+                                                                                    margin: 0;
+                                                                                    text-align: right;"></asp:Label>
+                </div>
+                <div class="profile__photo">
+                    <img src="../Images/NguyenKhacLinh.jpg" style="margin-left: 8px;
+                                                        width: 36px;
+                                                        height: 36px;
+                                                        object-fit: cover;
+                                                        border-radius: 50%;"/>
+                </div>
+            </div>
+        </nav>
+        <main>
+            <div class="main_top">
+                <div class="title_page">Online SCADA</div>
+                <div class="dropdown">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Chọn họng xuất</button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="HongXuat1.aspx">Họng xuất 1</a>
+                        <a class="dropdown-item" href="HongXuat2.aspx">Họng xuất 2</a>
+                        <a class="dropdown-item" href="HongXuat3.aspx">Họng xuất 3</a>
+                        <a class="dropdown-item" href="HongXuat4.aspx">Họng xuất 4</a>
+                        <a class="dropdown-item" href="HongXuat5.aspx">Họng xuất 5</a>
+                        <a class="dropdown-item" href="HongXuat6.aspx">Họng xuất 6</a>
+                        <a class="dropdown-item" href="HongXuat7.aspx">Họng xuất 7</a>
+                        <a class="dropdown-item" href="HongXuat8.aspx">Họng xuất 8</a>
+                    </div>
+                </div>
+                <div style="gap:10px;margin-top:5px;">
+                    <label>Nhập mã đơn:</label>
+                    <asp:TextBox ID="txt_MaDon" type="text" class="form-control-sm txt_MaDon" runat="server"></asp:TextBox>
+                    <asp:Button ID="btn_Enter_MaDon" type="button" class="btn btn-primary btn_Enter" runat="server" Text="Enter" OnClick="btn_Enter_MaDon_Click" />
+                </div>
+            </div>
+            <div class="tank_item">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+                </asp:ContentPlaceHolder>
+            </div>
+        </main>
+        </section>
+    </form>
+    <script>
+        //Remove Active
+        const allSideMenu = document.querySelectorAll('.sidebar .side_menu.top li a');
+
+        for (var i = 0; i < allSideMenu.length; i++) {
+            allSideMenu[i].classList.remove('active');
+        }
+
+        //Toggle SideMenu
+        $("#menu").click(function () {
+            $(".sidebar").toggleClass(' hide');
+        })
+
+    </script>
+</body>
+</html>

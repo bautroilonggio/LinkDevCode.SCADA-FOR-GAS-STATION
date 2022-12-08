@@ -1,0 +1,48 @@
+﻿main {
+    position: absolute;
+    width: 100%;
+    padding: 15px;
+    font-family: var(--poppins);
+    overflow: auto;
+    max-height: calc(100vh - 56px);
+}
+
+    main .head_title {
+        color: var(--dark);
+        
+    }
+
+        main .head_title h3 {
+            font-size: 25px;
+            font-weight: 550;
+        }
+
+        main .head_title label:first-child {
+            color: var(--dark-grey);
+        }
+
+            main .head_title label:last-child {
+                color: var(--blue);
+            }
+
+        main .head_title i {
+            font-size: 15px;
+        }
+
+    main .Data {
+        background: white;
+        border-radius: 10px 10px 0 0;
+        padding: 10px;
+        height: calc(100vh - 180px);
+        overflow-y: auto;
+    }
+
+        main .Data .Data_title {
+            font-size: 20px;
+            font-weight: 550;
+        }
+
+        main .Data .X {
+            /* padding: 15px; */
+            font-size: 13px;
+        }

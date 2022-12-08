@@ -1,0 +1,328 @@
+
+.tank_title {
+    margin-bottom: 0.2rem;
+    font-weight: bold;
+}
+
+.tank_title i {
+    padding: 3px 5px;
+    border-radius: 50%;
+    color: white;
+    font-size: 15px;
+}
+
+.tank {
+    overflow-x: auto;
+    position: relative;
+    display: inline;
+}
+
+    .tank .box, .textbox {
+        position: absolute;
+    }
+
+    .tank img {
+        z-index: 1;
+        top: 90px;
+        left: 0px;
+    }
+
+    .tank .progress, .textbox {
+        z-index: 2;
+    }
+
+    .tank .progress {
+        transform: rotate(-90deg);
+        top: 233px;
+        left: 68px;
+        width: 225px;
+    }
+
+    .tank .Dem {
+        left: 1250px;
+        height: 100px;
+        width: 5px;
+        z-index: 6;
+    }
+
+    /* ==== Text box ======= */
+    .tank .output .textbox {
+        width: 80px;
+        text-align:left;
+    }
+
+    .tank .output .textbox.VanXuat {
+        top: 245px;
+        left: 390px;
+    }
+
+    .tank .output .textbox.LuuLuongXuat {
+        top: 265px;
+        left: 500px;
+    }
+
+    .tank .output .textbox.Muc {
+        top: 70px;
+        left: 75px;
+    }
+
+    .tank .output .textbox.NhietDo {
+        top: 70px;
+        left: 210px;
+    }
+    /* ==== End OF text box ======= */
+/* ==== Symbol Diezel,R92,R95 ======= */
+.tank .symbol .SVanXuat {
+    top: 285px;
+    left: 415px;
+}
+
+.tank .symbol .SBomXuat {
+    top: 325px;
+    left: 293px;
+}
+
+.tank .symbol .SMucHH, .tank .symbol .SMucH,
+.tank .symbol .SMucL, .tank .symbol .SMucLL {
+    left: 66px;
+}
+
+    .tank .symbol .SMucHH {
+        top: 150px;
+    }
+
+    .tank .symbol .SMucH {
+        top: 175px;
+    }
+
+    .tank .symbol .SMucL {
+        top: 315px;
+    }
+
+    .tank .symbol .SMucLL {
+        top: 342px;
+    }
+
+    .tank .symbol .SXe {
+        top: 363px;
+        left: 600px;
+    }
+/* ==== END OF Symbol Diezel,R92,R95 ======= */
+
+    .tank .GiamSat, .DonXuat, .DonGia {
+        background: var(--grey);
+        border-radius: 10px;
+    }
+
+    .tank .GiamSat {
+        top: 200px;
+        left: 895px;
+        width: 255px;
+        padding: 5px;
+        z-index: 3;
+    }
+
+    .tank .DonXuat {
+        top: -20px;
+        left: 895px;
+        width: 255px;
+        padding: 5px 0px;
+        z-index: 5;
+    }
+
+        .tank .DonXuat div, .tank .DonGia div {
+            padding: 6px;
+        }
+
+    .tank .box.DonGia {
+        top: -20px;
+        left: 600px;
+        width: 272px;
+        padding: 5px 0px;
+        z-index: 5;
+    }
+
+        .tank .box.DonGia .txt_SanPham {
+            margin-left: 6px;
+            width: 163px;
+        }
+
+        .tank .box.DonGia .txt_DonGia {
+            margin-left: 22px;
+            width: 102px;
+        }
+
+        .tank .box.DonGia .txt_ThanhTien {
+            margin-left: 2px;
+            width: 100px;
+        }
+
+        .tank .box.DonGia .txt_TrangThai {
+            margin-left: 6px;
+            width: 162px;
+        }
+
+
+        .txt_MaDon {
+            width: 130px;
+        }
+
+.txt_TheTichCan {
+    width: 115px;
+}
+
+.txt_TheTichDaBom {
+    margin-left: 8px;
+    width: 115px;
+}
+
+.tank .DonXuat .btn_Bom, .tank .DonXuat .btn_DungBom {
+    width: 115px;
+    height: 35px;
+    padding: 0;
+}
+
+/* Tank E5 */
+.tank .box.E5 {
+    top: 30px;
+    left: 0px;
+}
+
+.tank #pro51, #pro52 {
+    left: 65px;
+    width: 140px;
+}
+
+.tank #pro51 {
+    top: 132px;
+}
+
+.tank #pro52 {
+    top: 338px;
+}
+
+#E5 .textbox {
+    height: 25px;
+    width: 80px;
+}
+
+.tank .textbox.VanXuatE100 {
+    top: 118px;
+    left: 265px;
+}
+
+.tank .textbox.VanXuatRON92 {
+    top: 323px;
+    left: 265px;
+}
+
+.tank .textbox.VanXuatE5 {
+    top: 223px;
+    left: 488px;
+}
+
+.tank .textbox.LuuLuongXuatE100 {
+    top: 128px;
+    left: 365px;
+}
+
+.tank .textbox.LuuLuongXuatRON92 {
+    top: 335px;
+    left: 365px;
+}
+
+.tank .textbox.MucE100 {
+    top: 18px;
+    left: 28px;
+}
+
+.tank .textbox.MucRON92 {
+    top: 230px;
+    left: 28px;
+}
+
+.tank .textbox.NhietDoE100 {
+    top: 18px;
+    left: 145px;
+}
+
+.tank .textbox.NhietDoRON92 {
+    top: 230px;
+    left: 145px;
+}
+
+/* ==== Symbol E5 ======= */
+.tank .symbol_E5 .SVanXuat_E100 {
+    top: 148px;
+    left: 295px;
+}
+
+.tank .symbol_E5 .SVanXuat_RON92 {
+    top: 353px;
+    left: 295px;
+}
+
+.tank .symbol_E5 .SVanXuat_E5 {
+    top: 250px;
+    left: 503px;
+}
+
+.tank .symbol_E5 .SBomXuat_E100 {
+    top: 180px;
+    left: 209px;
+}
+
+.tank .symbol_E5 .SBomXuat_RON92 {
+    top: 384px;
+    left: 208px;
+}
+
+.tank .symbol_E5 .SMucHH_E100, .tank .symbol_E5 .SMucH_E100,
+.tank .symbol_E5 .SMucL_E100, .tank .symbol_E5 .SMucLL_E100 {
+    left: 58px;
+}
+
+.tank .symbol_E5 .SMucHH_RON92, .tank .symbol_E5 .SMucH_RON92,
+.tank .symbol_E5 .SMucL_RON92, .tank .symbol_E5 .SMucLL_RON92 {
+    left: 56px;
+}
+
+.tank .symbol_E5 .SMucHH_E100 {
+    top: 76px;
+}
+
+.tank .symbol_E5 .SMucH_E100 {
+    top: 103px;
+}
+
+.tank .symbol_E5 .SMucL_E100 {
+    top: 176px;
+}
+
+.tank .symbol_E5 .SMucLL_E100 {
+    top: 202px;
+}
+
+.tank .symbol_E5 .SMucHH_RON92 {
+    top: 281px;
+}
+
+.tank .symbol_E5 .SMucH_RON92 {
+    top: 308px;
+}
+
+.tank .symbol_E5 .SMucL_RON92 {
+    top: 382px;
+}
+
+.tank .symbol_E5 .SMucLL_RON92 {
+    top: 408px;
+}
+
+.tank .symbol_E5 .SXe_E5 {
+    top: 310px;
+    left: 575px;
+}
+/* ==== END OF Symbol E5 ======= */
+
+

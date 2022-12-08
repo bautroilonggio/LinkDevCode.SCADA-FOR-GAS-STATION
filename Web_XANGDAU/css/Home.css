@@ -1,0 +1,217 @@
+﻿/* ============== MAIN ============ */
+main {
+    position: absolute;
+    width: 100%;
+    padding: 15px;
+    font-family: var(--poppins);
+    overflow-y: auto;
+    max-height: calc(100vh - 56px);
+}
+
+    main .title_page {
+        font-size: 26px;
+        font-weight: 600;
+    }
+
+    /* TANK LIST */
+main .tank_list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
+        grid-gap: 10px;
+        margin-top: 20px;
+    }
+
+    main .tank_list li {
+        background: white;
+        border-radius: 20px;
+        padding: 10px;
+    }
+
+main .tank_list .tank_title {
+            margin-bottom: 0.2rem;
+            font-weight: bold;
+        }
+
+    main .tank_list .tank_title i {
+        padding: 3px 5px;
+        border-radius: 50%;
+        color: white;
+        font-size: 15px;
+    }
+
+main .tank_list .tank {
+            display: flex;
+            grid-gap: 10px;
+        }
+
+main .tank_list .tank .tank_img {
+                display: inline;
+            }
+
+main .tank_list .tank .tank_img img {
+                    position: absolute;
+                }
+
+main .tank_list .tank .tank_img .progress {
+                    transform: rotate(-90deg);
+                    width: 120px;
+                    position: relative;
+                    top: 53px;
+                }
+
+main .tank_list .tank .tank_info {
+                display: grid;
+                grid-template-rows: 80% 20%;
+                margin-bottom: 8px;
+                width: 100%;
+            }
+
+.tank_info .tank_water table {
+    width: 100%;
+    height: 100%;
+    font-size: 0.8rem;
+}
+
+.tank_info .btn_setting .btn_ThongSo {
+    margin-bottom: 1.2rem;
+    height: 1.8rem;
+    width: 100%;
+    background: linear-gradient(120deg, #6271c2,#3f83aa, #842f8b);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 0.8rem;
+    background-size: 200%;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+    .tank_info .btn_setting .btn_ThongSo:hover {
+        background-position: right;
+    }
+
+/* SYSTEM INFO */
+main .DonXuat {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(415px, 1fr));
+    grid-gap: 10px;
+    margin-top: 20px;
+}
+
+    main .DonXuat .top, .DonHang .top {
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    main .DonXuat .in, .out {
+        border-radius: 10px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    main .DonXuat .the {
+        background: white;
+        border-radius: 15px;
+        display: flex;
+        padding: 20px;
+        justify-content: space-between;
+    }
+
+        main .DonXuat .the:hover {
+            box-shadow: none;
+        }
+
+    main .DonXuat .out .the .number {
+        font-weight: 500;
+        font-size: 1.6rem;
+        color: #0f5296;
+        margin-left:5px;
+    }
+
+    main .DonXuat .name {
+        font-size: 1rem;
+        color: var(--dark-grey);
+        margin-left: 5px;
+    }
+
+    main .DonXuat .icon {
+        font-size: 2.5rem;
+        color: var(--dark-grey);
+        margin-top: 10px;
+    }
+
+/* TANK SETTING */
+.background_setting {
+    background: black;
+    z-index: 200;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    opacity: 0.8;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.tank_setting {
+    background: white;
+    border-radius: 10px;
+    position: fixed;
+    width: 355px;
+    left: calc(50% - 180px);
+    top: 38px;
+    z-index: 1000;
+    display: none;
+}
+
+    .tank_setting .tank_setting_title {
+        background: var(--blue);
+        border-radius: 10px 10px 0 0;
+        padding: 8px 0 7px 15px;
+        color: white;
+        font-size: 1.1rem;
+        font-weight: bold;
+        width: 100%;
+    }
+
+        .tank_setting .tank_setting_title .hide_setting {
+            cursor: pointer;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+            transform: translateY(-8px);
+            width: 5rem;
+            height: 2.5rem;
+            border-radius: 0 10px 0 0;
+        }
+
+    .tank_setting .tank_setting_info {
+        padding: 10px 15px;
+    }
+
+        .tank_setting .tank_setting_info .prevent {
+            border-bottom: 1px solid #dadde1;
+            margin: 10px;
+        }
+
+        .tank_setting .tank_setting_info table {
+            margin: 5px 20px;
+            font-size: 1rem;
+        }
+
+        .tank_setting .tank_setting_info input {
+            text-align: center;
+        }
+
+        .tank_setting .tank_setting_info .tank_size input {
+            margin-left: 5px;
+        }
+
+    .tank_setting .tank_setting_OK .btn.btn-primary {
+        margin: 0.5rem 25% 1rem 25%;
+        width: 50%;
+        border-radius: 8px;
+    }
+
+/* =========== END OF MAIN ========= */

@@ -1,0 +1,340 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --light: #f9f9f9;
+    --blue: #3c91e6;
+    --light-blue: #cfe8ff;
+    --grey: #dedee6;
+    --dark-grey: #aaaaaa;
+    --dark: #342e37;
+    --red: #db504a;
+    --yellow: #ffce29;
+    --light-yellow: #fff2c6;
+    --orange: #fd7238;
+    --light-orange: #ffe0d3;
+    --poppins: 'Poppins', sans-serif;
+    --lato: 'Lato', sans-serif;
+    --width-sidebar-show: 250px;
+    --width-sidebar-hide: 60px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    background: var(--grey);
+}
+
+aside {
+    height: 100vh;
+}
+
+::-webkit-scrollbar{
+    width:15px;
+}
+
+::-webkit-scrollbar-track{
+    background: var(--dark-grey);
+}
+
+::-webkit-scrollbar-thumb{
+    background: var(--blue);
+}
+/* ======================= SIDEBAR ====================== */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--width-sidebar-show);
+    height: 100%;
+    /* background: var(--light); */
+    background: white;
+    z-index: 100;
+    font-family: var(--lato);
+    transition: 0.3s ease;
+    overflow-x: hidden;
+}
+
+    .sidebar.hide {
+        width: var(--width-sidebar-hide);
+    }
+
+    .sidebar .brand {
+        font-size: 24px;
+        font-weight: 700;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        color: var(--blue);
+    }
+
+        .sidebar .brand i {
+            min-width: 60px;
+            display: flex;
+            justify-content: center;
+        }
+
+    .sidebar .side_menu {
+        width: 100%;
+        margin-top: 48px;
+    }
+
+        .sidebar .side_menu li {
+            height: 48px;
+            background: transparent;
+            margin-left: 6px;
+            border-radius: 48px 0 0 48px;
+            padding: 4px;
+            position: relative;
+        }
+
+            .sidebar .side_menu li.active {
+                background: var(--grey);                
+            }
+
+                .sidebar .side_menu li.active a {
+                    color: var(--blue);
+                }
+
+                .sidebar .side_menu li.active::before {
+                    content: "";
+                    position: absolute;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    top: -40px;
+                    right: 0;
+                    box-shadow: 20px 20px 0 var(--grey);
+                    z-index: -1;
+                }
+
+                .sidebar .side_menu li.active::after {
+                    content: "";
+                    position: absolute;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    bottom: -40px;
+                    right: 0;
+                    box-shadow: 20px -20px 0 var(--grey);
+                    z-index: -1;
+                }
+
+            .sidebar .side_menu li a {
+                width: 100%;
+                height: 100%;
+                background: var(--light);
+                display: flex;
+                align-items: center;
+                border-radius: 48px;
+                font-size: 16px;
+                color: var(--dark);
+                white-space: nowrap;
+                overflow-x: hidden;
+            }
+
+    .sidebar.hide .side_menu li.active a {
+        color: var(--blue);
+    }
+
+    .sidebar.hide .side_menu li a {
+        width: calc(48px - (4px * 2));
+        transition: 0.3s ease;
+    }
+
+    .sidebar .side_menu li .logout {
+        color: var(--red);
+        text-decoration: none;
+    }
+
+    .sidebar .side_menu.top li a:hover {
+        color: var(--blue);
+        text-decoration: none;
+    }
+
+    .sidebar .side_menu li a i {
+        min-width: calc(60px - ((4px + 6px) * 2));
+        display: flex;
+        justify-content: center;
+    }
+
+/* Data Table */
+.Data_menu {
+    left: calc(var(--width-sidebar-show) + 3px);
+    position: absolute;
+    z-index: 1000;
+    top: 200px;
+    display: flex;
+}
+
+    .Data_menu .VungDem {
+        /* background: blue; */
+        height: 50px;
+        width: 265px;
+        transform: translateX(-260px);
+        position: fixed;
+        display: none;
+    }
+
+    .Data_menu li {
+        border-radius: 8px;
+        display: none;
+    }
+
+        .Data_menu li a {
+            padding: 5px 10px;
+            background: var(--light);
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+
+            .Data_menu li a:hover {
+                color: var(--blue);
+            }
+
+    .Data_menu .TheoTank a, .Data_menu .TheoHangMuc a {
+        padding-left: 30px;
+    }
+
+.XemTheoTank.active a, .XemTheoHangMuc.active a {
+    /* background: var(--blue); */
+    color: var(--blue);
+}
+
+.sidebar.hide ~ .Data_menu {
+    left: calc(var(--width-sidebar-hide) + 3px);
+}
+/* ======================= END OF SIDEBAR ====================== */
+
+/* ======================= CONTENT ====================== */
+.content {
+    position: relative;
+    width: calc(100% - var(--width-sidebar-show));
+    left: var(--width-sidebar-show);
+    transition: 0.3s ease;
+}
+
+.sidebar.hide ~ .content {
+    width: calc(100% - var(--width-sidebar-hide));
+    left: var(--width-sidebar-hide);
+}
+
+
+/* ============ NAVBAR ============= */
+.content nav {
+    height: 56px;
+    background: white;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    grid-gap: 30px;
+    font-family: var(--lato);
+    z-index: 500;
+}
+
+    .content nav::before {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        bottom: -40px;
+        left: 0;
+        border-radius: 50%;
+        box-shadow: -20px -20px 0 white;
+    }
+
+    .content nav .bi.bi-list {
+        cursor: pointer;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .content nav .title {
+        font-size: 16px;
+        font-weight: 550;
+    }
+
+    .content nav .profile {
+        position: absolute;
+        right: 10px;
+        align-items: center;
+        display: flex;
+    }
+
+        .content nav .profile .profile__content {
+            display: flex;
+            flex-direction: column;
+        }
+
+            .content nav .profile .profile__content .name {
+                display: inline;
+                font-size: 15px;
+                margin: 0;
+                text-align: right;
+            }
+
+        .content nav .profile .profile__photo img {
+            margin-left: 8px;
+            width: 36px;
+            height: 36px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .content nav .profile .profile_info {
+            background: var(--light-blue);
+            position: fixed;
+            right: 18px;
+            top: calc(var(--height-nav) + 3px);
+            height: auto;
+            width: auto;
+            border-radius: 5px;
+            padding: 6px 10px;
+            display: none;
+            z-index: 1000;
+        }
+
+            .content nav .profile .profile_info::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 2px;
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-bottom: 10px solid var(--light-blue);
+                transform: translateY(-100%);
+            }
+
+            .content nav .profile .profile_info .info_top {
+                display: flex;
+                align-items: center;
+            }
+
+                .content nav .profile .profile_info .info_top .anh{
+                    height: 50px;
+                    width: 50px;
+                    object-fit: cover;
+                    border-radius: 10px;
+                }
+
+                .content nav .profile .profile_info .info_top .info_name {
+                    padding-left: 10px;
+                }
+
+/* ========== END OF NAVBAR ======== */
+
+
+
+/* ======================= END OF CONTENT ====================== */
+
